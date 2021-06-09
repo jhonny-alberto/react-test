@@ -1,0 +1,90 @@
+.countdown {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.countdown.light .item .digits {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.item {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  font-size: 1.15em;
+  overflow: hidden;
+  margin-left: 0.25em;
+  min-width: 1.7em;
+  text-align: center;
+}
+
+.item:first-child {
+  margin: 0;
+}
+
+.item:first-child:before {
+  display: none;
+}
+
+.label {
+  font-size: 0.5em;
+  text-transform: uppercase;
+  margin-top: 0.25em;
+}
+
+.digits {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 2px;
+  padding: 0 0.2em;
+}
+
+.digit {
+  position: relative;
+  min-width: 0.65em;
+  text-align: center;
+  display: inline-block;
+}
+
+.digit.animated .next,
+.digit.animated .current {
+  transition: all 0.2s ease-in-out;
+}
+
+.digit.animated .current {
+  opacity: 0;
+  transform: translate(0, -50%);
+}
+
+.digit.animated .next {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+.digit .next,
+.digit .current,
+.digit .hidden {
+  display: inline-block;
+}
+
+.digit .hidden {
+  opacity: 0;
+}
+
+.digit .next,
+.digit .current {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: none;
+  transform: translate(0, 0);
+}
+
+.digit .next {
+  top: 50%;
+  opacity: 0;
+}
+
+.digit .current {
+  top: 0;
+}
